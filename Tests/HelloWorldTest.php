@@ -2,11 +2,17 @@
 
 class HelloWorldTest extends PHPUnit_Framework_TestCase
 {
+
+	private $helloWorld;
+
+	public function setUp()
+	{
+       	$this->helloWorld = new HelloWorld();
+	}
+
     public function testHelloWorld()
     {
-        $helloWorld = new HelloWorld();
-
-        $this->assertEquals('Hello Malachi!', $helloWorld->hello());
-		$this->assertEquals('Hello Bob!', $helloWorld->hello('Bob'));
+        $this->assertEquals('Hello Malachi!', $this->helloWorld->hello());
+		$this->assertEquals('Hello Bob!', $this->helloWorld->hello('Bob'));
     }
 }
